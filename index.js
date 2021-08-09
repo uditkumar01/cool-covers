@@ -140,7 +140,7 @@ app.get('/', (req, res) => {
             console.log(err.message);
             console.error(err);
         }
-    }, 40000);
+    }, 10000);
     res.send("hi");
 });
 
