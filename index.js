@@ -15,6 +15,7 @@ connectDB();
 
 const username = "uditkumar01";
 
+
 // async function checkFollowers(username) {
 //     const res = await axios.get(`https://api.github.com/users/${username}/followers`)
 //     return res.data;
