@@ -91,7 +91,7 @@ app.get('/', (req, res) => {
                 if (diffUsers.length > 0) {
                     await ImageCollection.insertMany(diffUsers);
 
-                    const newUserList = (diffUsers.concat(allUsers)).slice(0, 16);
+                    const newUserList = (diffUsers.concat(allUsers)).slice(0, 36);
 
                     console.log(newUserList);
 
