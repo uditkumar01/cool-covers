@@ -8,6 +8,7 @@ const cors = require("cors");
 const app = express();
 const recentFollowers = require("./assets/utils/recentFollowers");
 const { testPng, createdPNG } = require("./assets/constants");
+const fs = require("fs");
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
@@ -31,6 +32,9 @@ async function makeCreateImageCall(newUserList) {
   const image = await recentFollowers(newUserList);
   // always overwrite the first document
   if (image && image.startsWith("data:image/png;base64,")) {
+    const imageBase64String = image?.replace(/^data:image\/png;base64,/, "");
+    const imageBuffer = Buffer.from(imageBase64String, "base64");
+    fs.writeFileSync(createdPNG, imageBuffer);
     await ImageUrl.findOneAndUpdate(
       {},
       {
@@ -70,29 +74,6 @@ const getData = async (html) => {
   return data;
 };
 
-// const testFollowers = [
-//   {
-//     avatar_url: "https://avatars.githubusercontent.com/u/62516548?v=4",
-//     login: "Piyush2961",
-//   },
-//   {
-//     avatar_url: "https://avatars.githubusercontent.com/u/56130227?v=4",
-//     login: "vivekgugnani",
-//   },
-//   {
-//     avatar_url: "https://avatars.githubusercontent.com/u/12944645?v=4",
-//     login: "BenHen75",
-//   },
-//   {
-//     avatar_url: "https://avatars.githubusercontent.com/u/73431277?v=4",
-//     login: "topcoder0108",
-//   },
-//   {
-//     avatar_url: "https://avatars.githubusercontent.com/u/91886475?v=4",
-//     login: "himmy4",
-//   },
-// ];
-
 const checkFollowers = async (username, followersCount) => {
   try {
     let allFollowers = [];
@@ -124,13 +105,15 @@ app.get("/uditkumar01.png", async (req, res) => {
     const followersCount = await checkFollowersCount(username);
     console.log(followersCount, dbFollowersCount);
     if (dbFollowersCount !== followersCount) {
-      const dbFollowers = await ImageCollection.find({});
+      const dbFollowers = await ImageCollection.find({}).sort({
+        createdAt: -1,
+      });
       const gitFollowers = await checkFollowers(username, followersCount);
       const DB_LEN = dbFollowers.length;
       const GIT_LEN = gitFollowers.length;
       console.log("running", DB_LEN, GIT_LEN);
       if (GIT_LEN > DB_LEN) {
-        console.log("someone followed");
+        console.log("someone followed", dbFollowers);
         const diffUsers = [];
         const allUsers = [];
         gitFollowers.forEach((follower) => {
@@ -138,12 +121,12 @@ app.get("/uditkumar01.png", async (req, res) => {
           const username = follower.login;
           let userExists = false;
           for (let i = 0; i < DB_LEN; i++) {
-            console.log(
-              ava_url,
-              dbFollowers[i].avatar_url,
-              username === dbFollowers[i].username
-            );
             if (username === dbFollowers[i].username) {
+              allUsers.push({
+                username,
+                image: ava_url,
+                createdAt: dbFollowers[i].createdAt,
+              });
               userExists = true;
               break;
             }
@@ -152,21 +135,26 @@ app.get("/uditkumar01.png", async (req, res) => {
             diffUsers.push({
               username,
               image: ava_url,
-            });
-          } else {
-            allUsers.push({
-              username,
-              image: ava_url,
+              createdAt: new Date(),
             });
           }
         });
+
         console.log(diffUsers.length);
+
         if (diffUsers.length > 0) {
           console.log("calling create image call", diffUsers);
           await ImageCollection.insertMany(diffUsers);
 
+          allUsers.sort((a, b) => {
+            return (
+              new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            );
+          });
+          console.log("all users", allUsers);
+
           const newUserList = diffUsers.slice(0, 5).map((user) => user.image);
-          const newAllUsers = allUsers.map((user) => user.image);
+          const newAllUsers = allUsers.slice(0, 5).map((user) => user.image);
 
           for (let i = 0; i < newAllUsers.length; i++) {
             const user = newAllUsers[i];
@@ -198,19 +186,28 @@ app.get("/uditkumar01.png", async (req, res) => {
       }
     }
 
-    const image = await ImageUrl.findOne({});
+    const createdPngExists = fs.existsSync(createdPNG);
+    console.log("createdPngExists", createdPngExists);
+    if (!createdPngExists) {
+      const image = await ImageUrl.findOne({});
 
-    // throw new Error("error");
+      // throw new Error("error");
 
-    const imageBase64String = image.image;
-    // const imageBuffer = Buffer.from(imageBase64String, "base64");
+      const imageBase64String = image.image?.replace(
+        /^data:image\/png;base64,/,
+        ""
+      );
+      const imageBuffer = Buffer.from(imageBase64String, "base64");
 
-    res.status(200).type("image/png").sendFile(`${imageBase64String}`);
+      fs.writeFileSync(createdPNG, imageBuffer);
+    }
+
+    res.status(200).type("image/png").sendFile(createdPNG);
     // res.end(image.image);
   } catch (err) {
     console.log(err.message);
     console.error(err);
-    res.status(200).sendFile(testPng);
+    res.status(200).send("herrir");
   }
   //   }, 10000);
 });
