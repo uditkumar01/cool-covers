@@ -1,5 +1,4 @@
 const sharp = require("sharp");
-const fs = require("fs");
 const { BG_IMAGE_PATH } = require("../constants");
 const { ImagesCompositeOpts } = require("../constants");
 
@@ -35,7 +34,6 @@ async function makeGrid(images) {
       ])
       .png()
       .toBuffer();
-    fs.writeFileSync("./test.png", bgBuf);
     return `data:image/png;base64,${bgBuf.toString("base64")}`;
   } catch (err) {
     console.log("in makeGrid", err);

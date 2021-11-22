@@ -70,42 +70,47 @@ const getData = async (html) => {
   return data;
 };
 
-const testFollowers = [
-  {
-    avatar_url: "https://avatars.githubusercontent.com/u/62516548?v=4",
-    login: "Piyush2961",
-  },
-  {
-    avatar_url: "https://avatars.githubusercontent.com/u/56130227?v=4",
-    login: "vivekgugnani",
-  },
-  {
-    avatar_url: "https://avatars.githubusercontent.com/u/12944645?v=4",
-    login: "BenHen75",
-  },
-  {
-    avatar_url: "https://avatars.githubusercontent.com/u/73431277?v=4",
-    login: "topcoder0108",
-  },
-  {
-    avatar_url: "https://avatars.githubusercontent.com/u/91886475?v=4",
-    login: "himmy4",
-  },
-];
+// const testFollowers = [
+//   {
+//     avatar_url: "https://avatars.githubusercontent.com/u/62516548?v=4",
+//     login: "Piyush2961",
+//   },
+//   {
+//     avatar_url: "https://avatars.githubusercontent.com/u/56130227?v=4",
+//     login: "vivekgugnani",
+//   },
+//   {
+//     avatar_url: "https://avatars.githubusercontent.com/u/12944645?v=4",
+//     login: "BenHen75",
+//   },
+//   {
+//     avatar_url: "https://avatars.githubusercontent.com/u/73431277?v=4",
+//     login: "topcoder0108",
+//   },
+//   {
+//     avatar_url: "https://avatars.githubusercontent.com/u/91886475?v=4",
+//     login: "himmy4",
+//   },
+// ];
 
 const checkFollowers = async (username, followersCount) => {
   try {
-    const allFollowers = [];
+    let allFollowers = [];
     let pageNo = 1;
+    console.log("checking followers", allFollowers.length < followersCount);
     while (allFollowers.length < followersCount) {
       const URL = `https://github.com/${username}?page=${pageNo}&tab=followers`;
       const res = await axios.get(URL);
       const followers = await getData(res.data);
-      if (followers.length === 0) break;
-      allFollowers.concat(followers);
+      console.log("followers", followers.length);
+      if (followers.length < 1) {
+        break;
+      }
+      allFollowers = allFollowers.concat(followers);
       pageNo++;
     }
-    return testFollowers;
+    console.log("all followers", allFollowers.length);
+    return allFollowers;
   } catch (err) {
     console.log(err);
   }
@@ -160,7 +165,7 @@ app.get("/", async (req, res) => {
           console.log("calling create image call", diffUsers);
           await ImageCollection.insertMany(diffUsers);
 
-          const newUserList = diffUsers.map((user) => user.image);
+          const newUserList = diffUsers.slice(0, 5).map((user) => user.image);
           const newAllUsers = allUsers.map((user) => user.image);
 
           for (let i = 0; i < newAllUsers.length; i++) {
@@ -176,7 +181,7 @@ app.get("/", async (req, res) => {
 
           console.log(newUserList);
 
-          await makeCreateImageCall(newUserList);
+          await makeCreateImageCall(newUserList.slice(0, 5));
         }
       } else if (DB_LEN > GIT_LEN) {
         console.log("someone unfollowed");
@@ -194,11 +199,12 @@ app.get("/", async (req, res) => {
     }
 
     const image = await ImageUrl.findOne({});
-    res.status(200).send(image.image);
+
+    res.status(200).contentType("image/png").send(image.image);
   } catch (err) {
     console.log(err.message);
     console.error(err);
-    res.status(200).sendFile(testPng);
+    res.status(200).contentType("image/png").sendFile(testPng);
   }
   //   }, 10000);
 });
