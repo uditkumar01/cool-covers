@@ -201,13 +201,12 @@ app.get("/uditkumar01.png", async (req, res) => {
 
       fs.writeFileSync(createdPNG, imageBuffer);
     }
-
     res.status(200).type("image/png").sendFile(createdPNG);
     // res.end(image.image);
   } catch (err) {
     console.log(err.message);
     console.error(err);
-    res.status(200).send("herrir");
+    res.status(500).sendFile(testPng);
   }
   //   }, 10000);
 });
