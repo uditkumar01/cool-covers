@@ -194,13 +194,11 @@ app.get("/", async (req, res) => {
     }
 
     const image = await ImageUrl.findOne({});
-    res.statusCode = 200;
-    // contentType: image base64 string
-    res.send(image.image);
+    res.status(200).send(image.image);
   } catch (err) {
     console.log(err.message);
     console.error(err);
-    res.sendFile(testPng);
+    res.status(200).sendFile(testPng);
   }
   //   }, 10000);
 });
