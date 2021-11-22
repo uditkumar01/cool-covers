@@ -7,7 +7,7 @@ const ImageUrl = require("./models/imageUrl.model");
 const cors = require("cors");
 const app = express();
 const recentFollowers = require("./assets/utils/recentFollowers");
-const { testPng } = require("./assets/constants");
+const { testPng, createdPNG } = require("./assets/constants");
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
@@ -117,7 +117,7 @@ const checkFollowers = async (username, followersCount) => {
   return [];
 };
 
-app.get("/", async (req, res) => {
+app.get("/uditkumar01.png", async (req, res) => {
   //   setInterval(async () => {
   try {
     const dbFollowersCount = await ImageCollection.count({});
@@ -200,7 +200,13 @@ app.get("/", async (req, res) => {
 
     const image = await ImageUrl.findOne({});
 
-    res.status(200).send(image.image);
+    // throw new Error("error");
+
+    const imageBase64String = image.image;
+    // const imageBuffer = Buffer.from(imageBase64String, "base64");
+
+    res.status(200).type("image/png").sendFile(`${imageBase64String}`);
+    // res.end(image.image);
   } catch (err) {
     console.log(err.message);
     console.error(err);

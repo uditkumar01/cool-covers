@@ -54,10 +54,13 @@ const testImageList = [
 
 const testPng = path.join(__dirname, "../assets/images/index.png");
 
+const createdPNG = path.join(__dirname, "../assets/images/created.png");
+
 module.exports = {
   BG_IMAGE_PATH,
   BG_DIMENSIONS,
   ImagesCompositeOpts,
   testImageList,
   testPng,
+  createdPNG,
 };
