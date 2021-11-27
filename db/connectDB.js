@@ -6,7 +6,7 @@ const URI = process.env["MONGODB_URI"];
 
 async function connectDB() {
   try {
-    await mongoose.connect(`${URI}followersTribute`, {
+    await mongoose.connect(`${URI}recentFollowers`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,

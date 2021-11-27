@@ -15,6 +15,9 @@
 # production
 /build
 
+#unused
+/__unused__
+
 # misc
 .DS_Store
 *.pem
