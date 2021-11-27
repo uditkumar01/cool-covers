@@ -5,7 +5,6 @@ const compareTwoJsons = (json1, json2) => {
     // if (typeof value1 === "object") {
     //   return compareTwoJsons(value1, value);
     // }
-    console.log(value1, value, key);
     return (value || value1) && value1 !== value;
   });
   return isDifferent;

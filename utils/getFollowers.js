@@ -15,7 +15,6 @@ const getFollowers = async (username, followersCount) => {
       allFollowers = allFollowers.concat(followers);
       pageNo++;
     }
-    console.log(allFollowers.map((follower) => follower.login));
     return allFollowers;
   } catch (err) {
     console.log(err);

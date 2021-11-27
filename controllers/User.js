@@ -12,7 +12,6 @@ const getUserImage = async (req, res) => {
   try {
     const query = parseQuery(req.query || {});
     const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
-    console.log(query);
 
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
