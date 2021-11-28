@@ -1,16 +1,16 @@
 <p align="center">
  <img width="100px" src="https://user-images.githubusercontent.com/55291327/143779291-adc7c78a-e643-4bf5-962d-35ce2a7b7a91.png" align="center" alt="GitHub Readme Covers" />
- <h2 align="center">GITHUB COOL COVERS</h2>
- <p align="center">Get dynamically generated GitHub covers for your readmes!</p>
+ <h2 align="center">❄️ GITHUB COOL COVERS ❄️</h2>
+ <p align="center">Get dynamically generated 🌐 GitHub covers for your readmes!</p>
 </p>
 
 # ⭐ Features
 
-- Dynamically generated covers with cool patterns.
-- Updates the recent followers avatars on every follow event, instantly.
-- Eight unique background patterns.
-- Supports all [Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
-- Highly Customizable.
+- Dynamically 🤖 generated covers with cool patterns.
+- Updates the recent followers ✏️ avatars on every follow event, instantly.
+- Eight unique 😊 background patterns.
+- Supports all 🕸️ [Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
+- Highly Customizable 📝.
 
 # 📌 How 2️⃣ Use?
 
