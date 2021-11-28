@@ -126,7 +126,7 @@ Its value should be a number.
 ![Udit's GitHub cover](https://cool-cover.up.railway.app/cover.png?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&grayscale=true&avatarRadius=50)
 ```
 
-#### All Different Patterns
+### 🖼️ All Different Patterns
 
 <!-- get table of able images 2 cols -->
 
