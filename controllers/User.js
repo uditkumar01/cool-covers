@@ -8,9 +8,9 @@ const { SVGS_BASE_PATH } = require("../constants/constant");
 const createFile = require("../utils/createFile");
 const compareTwoJsons = require("../utils/compareTwoJsons");
 
-const getUserImage = async (req, res) => {
+const getUserImage = async (query) => {
   try {
-    const query = parseQuery(req.query || {});
+    // const query = parseQuery(req.query || {});
 
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
@@ -26,6 +26,8 @@ const getUserImage = async (req, res) => {
       fontFamily: query.fontFamily,
       fontWeight: query.fontWeight,
       avatarRadius: query.avatarRadius,
+      pattern: query.pattern,
+      grayscale: query.grayscale,
     };
     const hasChangeinAttrs =
       user && compareTwoJsons(user?.imageAttrs || {}, imageAttrs);
@@ -60,21 +62,21 @@ const getUserImage = async (req, res) => {
       const svgStr = user?.coverImage;
       await createFile(svgStr, filePath);
     }
-    return res.status(200).sendFile(filePath);
+    // return res.status(200).sendFile(filePath);
   } catch (err) {
     console.log("Error in getUserImage", err);
   }
-  return res.status(400).send({ message: "error in getUserImage" });
+  // return res.status(400).send({ message: "error in getUserImage" });
 };
 
-const getCurrentImage = (req, res) => {
+const getCurrentImage = (req, res, next) => {
   try {
     const query = parseQuery(req.query || {});
 
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
 
-    getUserImage(req, res).catch((err) => {
+    getUserImage(query).catch((err) => {
       console.log(err.message, "error in getCurrentImage");
     });
     const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
@@ -96,6 +98,8 @@ const updateUserImage = async (req, res) => {
       fontFamily: query.fontFamily,
       fontWeight: query.fontWeight,
       avatarRadius: query.avatarRadius,
+      pattern: query.pattern,
+      grayscale: query.grayscale,
     };
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
