@@ -69,16 +69,18 @@ const getUserImage = async (query) => {
   // return res.status(400).send({ message: "error in getUserImage" });
 };
 
-const getCurrentImage = (req, res, next) => {
+const getCurrentImage = async (req, res, next) => {
   try {
     const query = parseQuery(req.query || {});
 
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
 
-    getUserImage(query).catch((err) => {
+    try {
+      getUserImage(query);
+    } catch (err) {
       console.log(err.message, "error in getCurrentImage");
-    });
+    }
     const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
     const createdPngExists = fs.existsSync(filePath);
     if (!createdPngExists) {
