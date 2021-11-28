@@ -11,10 +11,10 @@ const compareTwoJsons = require("../utils/compareTwoJsons");
 const getUserImage = async (req, res) => {
   try {
     const query = parseQuery(req.query || {});
-    const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
 
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
+    const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
     const user = await User.findOne({ username: query.username });
     const followers = await getFollowers(query.username, 5);
     const recentFollowerUsername = followers?.[0]?.login;
@@ -29,7 +29,6 @@ const getUserImage = async (req, res) => {
     };
     const hasChangeinAttrs =
       user && compareTwoJsons(user?.imageAttrs || {}, imageAttrs);
-    console.log(hasChangeinAttrs);
     if (!user) {
       console.log("creating new user");
       const coverImage = await createImage(query, followers || []);
@@ -56,7 +55,6 @@ const getUserImage = async (req, res) => {
       await user.save();
     }
     const createdPngExists = fs.existsSync(filePath);
-    console.log(createdPngExists);
     if (!createdPngExists) {
       console.log("creating file");
       const svgStr = user?.coverImage;
@@ -66,6 +64,25 @@ const getUserImage = async (req, res) => {
   } catch (err) {
     console.log("Error in getUserImage", err);
   }
+  return res.status(400).send({ message: "error in getUserImage" });
+};
+
+const getCurrentImage = (req, res) => {
+  try {
+    const query = parseQuery(req.query || {});
+
+    if (!query?.username)
+      return res.status(400).send({ message: "username is required" });
+
+    getUserImage(req, res).catch((err) => {
+      console.log(err.message, "error in getCurrentImage");
+    });
+    const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
+    return res.status(200).sendFile(filePath);
+  } catch (err) {
+    console.log("Error in getCurrentImage", err);
+  }
+  return res.status(400).send({ message: "error in getCurrentImage" });
 };
 
 const updateUserImage = async (req, res) => {
@@ -97,9 +114,11 @@ const updateUserImage = async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+  return res.status(400).send({ message: "error in updateUserImage" });
 };
 
 module.exports = {
   getUserImage,
   updateUserImage,
+  getCurrentImage,
 };

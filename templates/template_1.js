@@ -9,13 +9,13 @@ module.exports = (
   <g style="mix-blend-mode:luminosity">
     <rect width="1141" height="398" fill="url(#pattern0)" />
   </g>
-  <text x="50%" y="36%" style="direction:rtl; font-weight:${
+  <text x="50%" y="36%" direction="rtl" font-weight="${
     fontWeight || "400"
-  };font-family:'${
+  }" font-family="'${
   fontFamily ? `${fontFamily}` : "Monoton"
-}',Brush Script MT,Verdana ,sans-serif,Arial; font-size:${
+}','Brush Script MT',Verdana ,sans-serif,Arial" font-size="${
   fontSize || "7rem"
-};" dominant-baseline="middle" text-anchor="middle">${
+}" dominant-baseline="middle" text-anchor="middle">${
   text || "Hi, I'm Udit"
 }</text>
   <rect xmlns="http://www.w3.org/2000/svg" x="535" y="252" width="71" height="71" rx="${
