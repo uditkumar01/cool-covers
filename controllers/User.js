@@ -80,6 +80,13 @@ const getCurrentImage = (req, res, next) => {
       console.log(err.message, "error in getCurrentImage");
     });
     const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
+    const createdPngExists = fs.existsSync(filePath);
+    if (!createdPngExists) {
+      console.log("creating file");
+      const user = await User.findOne({ username: query.username });
+      const svgStr = user?.coverImage;
+      await createFile(svgStr, filePath);
+    }
     return res.status(200).sendFile(filePath);
   } catch (err) {
     console.log("Error in getCurrentImage", err);
