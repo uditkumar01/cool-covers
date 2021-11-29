@@ -1,4 +1,6 @@
-const patterns = require("../constants/patterns");
+const path = require("path");
+const { SVGS_BASE_PATH, PATTERNS_AVALIABLE } = require("../constants/constant");
+const base64Encode = require("../utils/base64Encode");
 
 module.exports = (
   {
@@ -98,8 +100,17 @@ module.exports = (
     <image id="image5_2_16" width="200" height="200" xlink:href="${
       users?.[3]?.avatar_url || ""
     }" />
-    <image id="image0_2_16" width="1141" height="398" xlink:href="${
-      patterns?.[pattern] || patterns?.default
-    }" />
+    <image id="image0_2_16" width="1141" height="398" xlink:href="${base64Encode(
+      path.join(
+        SVGS_BASE_PATH,
+        "..",
+        "patterns",
+        `${
+          PATTERNS_AVALIABLE.includes(pattern || "_none_") ? pattern : "p1"
+        }.png`
+      )
+    )}" />
   </defs>
 </svg>`;
+
+console.log(path.join(SVGS_BASE_PATH, "..", "patterns", `${"p1"}.png`));
