@@ -160,7 +160,7 @@ Its value should be a number.
             <img src="https://cool-cover.up.railway.app/cover.png?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://cool-cover.up.railway.app/cover.png?username=prerana1821&text=Prerana,+I'm+Vivek&pattern=p8" alt="GitHub Readme cover" />
+            <img src="https://cool-cover.up.railway.app/cover.png?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8" alt="GitHub Readme cover" />
         </td>
     </tr>
 </table>
