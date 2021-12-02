@@ -4,7 +4,11 @@ const User = require("../models/User.model");
 const createImage = require("../utils/createImage");
 const getFollowers = require("../utils/getFollowers");
 const parseQuery = require("../utils/parseQuery");
-const { SVGS_BASE_PATH, LOADING_IMAGE_PATH } = require("../constants/constant");
+const {
+  SVGS_BASE_PATH,
+  LOADING_IMAGE_PATH,
+  ERROR_IMAGE_PATH,
+} = require("../constants/constant");
 const createFile = require("../utils/createFile");
 const compareTwoJsons = require("../utils/compareTwoJsons");
 
@@ -97,7 +101,7 @@ const getCurrentImage = async (req, res) => {
   } catch (err) {
     console.log("Error in getCurrentImage", err);
   }
-  return res.status(400).sendFile(LOADING_IMAGE_PATH);
+  return res.status(400).sendFile(ERROR_IMAGE_PATH);
 };
 
 const updateUserImage = async (req, res) => {
