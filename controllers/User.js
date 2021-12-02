@@ -4,7 +4,7 @@ const User = require("../models/User.model");
 const createImage = require("../utils/createImage");
 const getFollowers = require("../utils/getFollowers");
 const parseQuery = require("../utils/parseQuery");
-const { SVGS_BASE_PATH } = require("../constants/constant");
+const { SVGS_BASE_PATH, LOADING_IMAGE_PATH } = require("../constants/constant");
 const createFile = require("../utils/createFile");
 const compareTwoJsons = require("../utils/compareTwoJsons");
 
@@ -69,7 +69,7 @@ const getUserImage = async (query) => {
   // return res.status(400).send({ message: "error in getUserImage" });
 };
 
-const getCurrentImage = async (req, res, next) => {
+const getCurrentImage = async (req, res) => {
   try {
     const query = parseQuery(req.query || {});
 
@@ -82,18 +82,22 @@ const getCurrentImage = async (req, res, next) => {
       console.log(err.message, "error in getCurrentImage");
     }
     const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
-    const createdPngExists = fs.existsSync(filePath);
+    let createdPngExists = fs.existsSync(filePath);
     if (!createdPngExists) {
       console.log("creating file");
       const user = await User.findOne({ username: query.username });
       const svgStr = user?.coverImage;
       await createFile(svgStr, filePath);
     }
+    createdPngExists = fs.existsSync(filePath);
+    if (!createdPngExists) {
+      filePath = LOADING_IMAGE_PATH;
+    }
     return res.status(200).sendFile(filePath);
   } catch (err) {
     console.log("Error in getCurrentImage", err);
   }
-  return res.status(400).send({ message: "error in getCurrentImage" });
+  return res.status(400).sendFile(LOADING_IMAGE_PATH);
 };
 
 const updateUserImage = async (req, res) => {
