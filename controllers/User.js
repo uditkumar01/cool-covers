@@ -80,28 +80,23 @@ const getCurrentImage = async (req, res) => {
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
 
-    try {
-      getUserImage(query);
-    } catch (err) {
-      console.log(err.message, "error in getCurrentImage");
-    }
-    const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
-    let createdPngExists = fs.existsSync(filePath);
-    if (!createdPngExists) {
-      console.log("creating file");
-      const user = await User.findOne({ username: query.username });
-      const svgStr = user?.coverImage;
-      await createFile(svgStr, filePath);
-    }
-    createdPngExists = fs.existsSync(filePath);
+    getUserImage(query);
+
+    let filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
+    const createdPngExists = fs.existsSync(filePath);
+    console.log("createdPngExists", createdPngExists);
     if (!createdPngExists) {
       filePath = LOADING_IMAGE_PATH;
     }
     return res.status(200).sendFile(filePath);
   } catch (err) {
     console.log("Error in getCurrentImage", err);
+    return res.status(200).sendFile(ERROR_IMAGE_PATH, {
+      headers: {
+        "Error-Message": err?.message,
+      },
+    });
   }
-  return res.status(400).sendFile(ERROR_IMAGE_PATH);
 };
 
 const updateUserImage = async (req, res) => {
