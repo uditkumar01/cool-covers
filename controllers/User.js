@@ -85,6 +85,7 @@ const getCurrentImage = async (req, res) => {
     let filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
     if (!fs.existsSync(filePath)) {
       console.log("creating file");
+      const user = await User.findOne({ username: query.username });
       const svgStr = user?.coverImage;
       await createFile(svgStr, filePath);
     }
