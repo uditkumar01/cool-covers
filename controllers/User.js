@@ -83,9 +83,12 @@ const getCurrentImage = async (req, res) => {
     getUserImage(query);
 
     let filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
-    const createdPngExists = fs.existsSync(filePath);
-    console.log("createdPngExists", createdPngExists);
-    if (!createdPngExists) {
+    if (!fs.existsSync(filePath)) {
+      console.log("creating file");
+      const svgStr = user?.coverImage;
+      await createFile(svgStr, filePath);
+    }
+    if (!fs.existsSync(filePath)) {
       filePath = LOADING_IMAGE_PATH;
     }
     return res.status(200).sendFile(filePath);
