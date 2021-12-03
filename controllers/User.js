@@ -18,6 +18,9 @@ const getUserImage = async (query) => {
 
     if (!query?.username)
       return res.status(400).send({ message: "username is required" });
+    if (!fs.existsSync(SVGS_BASE_PATH)) {
+      fs.mkdirSync(SVGS_BASE_PATH, { recursive: true });
+    }
     const filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
     const user = await User.findOne({ username: query.username });
     const followers = await getFollowers(query.username, 5);
@@ -81,6 +84,10 @@ const getCurrentImage = async (req, res) => {
       return res.status(400).send({ message: "username is required" });
 
     getUserImage(query);
+
+    if (!fs.existsSync(SVGS_BASE_PATH)) {
+      fs.mkdirSync(SVGS_BASE_PATH, { recursive: true });
+    }
 
     let filePath = path.join(SVGS_BASE_PATH, `${query.username}.svg`);
     if (!fs.existsSync(filePath)) {
