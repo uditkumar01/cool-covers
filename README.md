@@ -141,7 +141,7 @@ Its value should be a number.
     </tr>
     <tr>
         <td>
-            <img src="https://cool-cover.up.railway.app/cover.png?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&fontSize=5rem" alt="GitHub Readme cover" />
+            <img src="https://cool-cover.up.railway.app/cover.png?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&fontSize=6rem" alt="GitHub Readme cover" />
         </td>
         <td>
             <img src="https://cool-cover.up.railway.app/cover.png?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4" alt="GitHub Readme cover" />
