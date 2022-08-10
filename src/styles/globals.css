@@ -123,6 +123,10 @@ nav > h2 {
   align-items: center;
   gap: 10px;
 }
+.pl-1 {
+  padding-left: 0.5rem;
+  padding-right: 0.2rem;
+}
 button {
   padding: 12px 24px;
   border-radius: 6px;
@@ -147,6 +151,11 @@ button:not(:disabled):active {
   background-color: #fff;
   border: 1px solid #fff;
   color: var(--base-color);
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: flex;
   align-items: center;
   transition: all 0.2s ease-in;
@@ -163,7 +172,9 @@ button:not(:disabled):active {
   position: relative;
   display: flex;
   align-items: flex-end;
-  width: 770px;
+  max-width: 770px;
+  width: 100%;
+  margin: 0 1rem;
   height: 556px;
   -webkit-animation: slideInFromLeft 0.5s ease-out 0s 1;
   animation: slideInFromLeft 0.5s ease-out 0s 1;
@@ -223,6 +234,9 @@ footer {
   color: #fff;
   font-size: 24px;
 }
+.icon-btn > span {
+  display: none;
+}
 @media only screen and (min-width: 360px) and (max-width: 550px) {
   .container {
     margin: 0 20px;
@@ -233,6 +247,9 @@ footer {
   nav > h2 {
     margin-top: 12px;
     font-size: 24px;
+  }
+  .icon-btn > span {
+    display: inline;
   }
   .hero-container {
     margin-top: 140px;
@@ -281,6 +298,7 @@ footer {
   .hero-container {
     margin-top: 195px;
     margin-bottom: 200px;
+    flex-direction: column;
   }
   .subtext {
     font-size: 18px;

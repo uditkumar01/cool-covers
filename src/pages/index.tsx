@@ -154,6 +154,7 @@ const Home: NextPage = () => {
                     ></rect>
                     <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                   </svg>
+                  <span className="pl-1">Copy to clipboard</span>
                 </button>
                 <button type="submit" className="cover-btn">
                   Create
@@ -172,7 +173,7 @@ const Home: NextPage = () => {
         <footer>
           <p className="footer-text links">
             <a
-              href="https://twitter.com/0xbionic"
+              href="https://github.com/uditkumar01"
               target="_blank"
               rel="noreferrer"
             >
@@ -190,7 +191,7 @@ const Home: NextPage = () => {
             </a>
 
             <a
-              href="https://twitter.com/___Nadaaa"
+              href="https://twitter.com/uditkumar_01"
               target="_blank"
               rel="noreferrer"
             >
@@ -208,7 +209,7 @@ const Home: NextPage = () => {
             </a>
 
             <a
-              href="https://twitter.com/vijethx"
+              href="https://linkedin.com/in/uditkumar01"
               target="_blank"
               rel="noreferrer"
             >
