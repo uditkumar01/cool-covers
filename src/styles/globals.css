@@ -172,12 +172,17 @@ button:not(:disabled):active {
   position: relative;
   display: flex;
   align-items: flex-end;
-  max-width: 770px;
+  /* max-width: 770px; */
   width: 100%;
+  min-width: 50vw;
   margin: 0 1rem;
-  height: 556px;
+  min-height: 50vh;
+  height: auto;
   -webkit-animation: slideInFromLeft 0.5s ease-out 0s 1;
   animation: slideInFromLeft 0.5s ease-out 0s 1;
+}
+.hero-img {
+  display: none;
 }
 .loading-bg {
   background-color: #332c42;
@@ -275,9 +280,6 @@ footer {
   .waitlist {
     margin-bottom: 16px;
   }
-  .hero-img {
-    display: none;
-  }
   footer {
     left: 20px;
     padding-bottom: 10px;
@@ -331,7 +333,7 @@ footer {
     margin-right: 100px;
   }
 }
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1241px) {
   .container {
     margin: 0 auto;
     display: flex;
@@ -345,6 +347,7 @@ footer {
     margin-right: 50px;
   }
   .hero-img {
+    display: flex;
     margin-left: 50px;
   }
 }
