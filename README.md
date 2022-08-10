@@ -165,7 +165,7 @@ Its value should be a number.
     </tr>
 </table>
 
-<h3 align="center">💖 Star this project on GitHub</h3>
+<h3 align="center">⭐ Star this project on GitHub</h3>
 
 <p align="center">Made with ❣️ and JavaScript.</p>
 
