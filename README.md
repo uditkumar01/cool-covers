@@ -4,6 +4,17 @@
  <p align="center">Get dynamically generated 🌐 GitHub covers for your readmes!</p>
 </p>
 
+<div align="center">
+ <img src="https://img.shields.io/badge/react%20-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react basge" />
+ <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="ts basge" />
+ <img src="https://img.shields.io/badge/Next-002E3B?style=for-the-badge&logo=nextdotjs&logoColor=#00DC82" alt="nextjs badge" />
+ <br />
+ <img src="https://img.shields.io/github/repo-size/uditkumar01/cool-covers?style=for-the-badge&color=blueviolet" alt="repo size badge" />
+ <img src="https://img.shields.io/github/stars/uditkumar01/cool-covers?style=for-the-badge&color=silver" alt="build status badge" />
+ <img src="https://img.shields.io/github/forks/uditkumar01/cool-covers?style=for-the-badge" alt="no of forks badge" />
+ </div>
+
+
 # ⭐ Features
 
 - Dynamically 🤖 generated covers with cool patterns.
