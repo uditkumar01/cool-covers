@@ -1,6 +1,8 @@
 import { IFollower } from "./getUsers";
 import constant from "../constants/constant";
 import getImagesFromLink from "./getImagesFromLink";
+import getGoogleFontUrl from "./getGoogleFontUrl";
+import getFontCss from "./getFontCss";
 
 export default async (
   {
@@ -8,7 +10,7 @@ export default async (
     textColor,
     text,
     fontSize,
-    fontFamily,
+    fontFamily = "Monoton",
     fontWeight,
     avatarRadius,
     pattern,
@@ -60,13 +62,9 @@ export default async (
   textColor || "989898"
 }" opacity="0.5" />
   <defs>
-    <style type="text/css">@import url('https://fonts.googleapis.com/css2?${
-      fontFamily
-        ? `family=${fontFamily.replace(/\s/g, "+")}${
-            fontWeight ? `:wght@${fontWeight}` : ""
-          }`
-        : "family=Monoton"
-    }');</style>
+    <style type="text/css">${await getFontCss(
+      getGoogleFontUrl(fontFamily, fontWeight)
+    )}</style>
     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
       <use xlink:href="#image0_2_16" transform="scale(0.000876424 0.00251256)" />
     </pattern>

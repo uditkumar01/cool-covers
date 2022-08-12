@@ -9,7 +9,7 @@
 - Dynamically 🤖 generated covers with cool patterns.
 - Updates the recent followers ✏️ avatars on every follow event, instantly.
 - Eight unique 😊 background patterns.
-- Supports all 🕸️ [Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
+- Supports all 🕸️ [Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.asp) + 🤩 [Google Fonts](https://fonts.google.com/).
 - Highly Customizable 📝.
 
 # 📌 How 2️⃣ Use?
@@ -34,7 +34,7 @@ To change the font, you can pass a query parameter `?fontFamily=` with the font 
 ![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&fontFamily=Roboto)
 ```
 
-<em>Note: The font name must be a valid font name. And currently, only web safe fonts are supported.</em>
+<em>Note: The font name must be a valid font name (**case sensitive**). For Google fonts u can directly copy the name of the font from here: <a href="https://fonts.google.com/">Google Fonts</a></em>
 
 ### 🐤 Change Font Size
 
