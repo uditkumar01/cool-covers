@@ -129,12 +129,23 @@ Using `?grayscale=` query parameter, you can add a grayscale effect to the cover
 
 You can easily change the avatar radius of recent followers by passing a query parameter `?avatarRadius=` with the radius value.
 
-Its value should be a number.
+Its value should be a number (can have any unit like px, rem, em, etc).
 
 > Example: `&avatarRadius=50`
 
 ```md
 ![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&grayscale=true&avatarRadius=50)
+```
+
+### 📌 Change Cover's Title Word Spacing
+You can customize the word spacing of the cover's title by passing a query parameter `?wordSpacing=` with the spacing value.
+
+Its value should be a number (can have any unit like px, rem, em, etc).
+
+> Example: `&wordSpacing=25px`
+
+```md
+![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&fontSize=6rem&wordSpacing=25px)
 ```
 
 ### 🖼️ All Different Patterns
@@ -144,7 +155,7 @@ Its value should be a number.
 <table>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&fontSize=6rem&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&fontSize=6rem&wordSpacing=25px&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
             <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&fontFamily=Rubik+Maze&maxage=31536000" alt="GitHub Readme cover" />
