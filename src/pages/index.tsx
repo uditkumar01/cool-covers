@@ -44,7 +44,7 @@ const Home: NextPage = () => {
   const getImage = async (username: string) => {
     setIsLoading(true);
     try {
-      const queryStr = `?username=${username}&text=Hi+I'm+@${username}&fontFamily=Monoton&pattern=p2&textFontSize=3rem&textWordSpacing=25px&textLetterSpacing=8px`;
+      const queryStr = `?username=${username}&text=Hi+I'm+@${username}&fontFamily=Monoton&pattern=p2&textFontSize=4rem&textWordSpacing=25px&textLetterSpacing=8px`;
       const image = await axios.get(`/api/get-cover${queryStr}`);
       const svgData = image.data;
       // to data url
