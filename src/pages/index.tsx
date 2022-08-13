@@ -8,11 +8,11 @@ import {
   AiFillLinkedin,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import { FiCopy } from "react-icons/fi";
 import { ImSpinner5 } from "react-icons/im";
 import { useEffect, useRef, useState } from "react";
-import { BackToTopButton, IconButton } from "../components";
+import { IconButton } from "../components";
 import { throttle } from "../utils/throttle";
+import { FaChevronUp } from "react-icons/fa";
 
 const defaultSrc = "/images/example.svg";
 
@@ -21,6 +21,7 @@ const Home: NextPage = () => {
   const [src, setSrc] = useState(defaultSrc);
   const [queryURL, setQueryURL] = useState("");
   const navRef = useRef<HTMLDivElement>(null);
+  const backToTopRef = useRef<HTMLButtonElement>(null);
 
   const onCopy = (e: React.MouseEvent<HTMLButtonElement>) => {
     navigator.clipboard.writeText(queryURL);
@@ -34,6 +35,10 @@ const Home: NextPage = () => {
       ele.innerText = "Copy";
       ele.classList.remove("!bg-green-500");
     }, 4000);
+  };
+
+  const goToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const getImage = async (username: string) => {
@@ -63,20 +68,27 @@ const Home: NextPage = () => {
   };
 
   useEffect(() => {
-    if (!window || !navRef?.current) return;
-
-    const onScrollHandler = throttle((e: Event) => {
-      let navOffsetTop = navRef.current?.offsetTop ?? 0;
-      let pageYOffset = window.pageYOffset ?? 0;
-      if (pageYOffset > navOffsetTop) navRef.current?.classList.add("sticky");
-      else navRef.current?.classList.remove("sticky");
+    const onThrottleCallback = (
+      pageYOffset: number,
+      nav: HTMLDivElement,
+      btn: HTMLButtonElement
+    ) => {
+      let navOffsetTop = nav.offsetTop ?? 0;
+      // let pageYOffset = window.pageYOffset ?? 0;
+      if (pageYOffset > navOffsetTop) nav.classList.add("sticky");
+      else nav.classList.remove("sticky");
 
       // back to top button
-      let btn = document.querySelector(".back-to-top");
       if (!btn) return;
       if (pageYOffset > 300) btn.classList.add("floating-btn-show");
       else btn.classList.remove("floating-btn-show");
-    }, 100);
+    };
+    const onScroll = throttle(onThrottleCallback, 1000);
+
+    const onScrollHandler = (e: Event) => {
+      if (!window || !navRef?.current || !backToTopRef?.current) return;
+      onScroll(window.pageYOffset ?? 0, navRef.current, backToTopRef.current);
+    };
 
     window.addEventListener("scroll", onScrollHandler);
 
@@ -367,7 +379,13 @@ const Home: NextPage = () => {
           </IconButton>
         </footer>
 
-        <BackToTopButton />
+        <button
+          ref={backToTopRef}
+          className="back-to-top fixed bottom-8 flex right-8 left-auto z-[999] h-12 w-12 items-center justify-center rounded-full bg-primary text-white shadow-md transition duration-300 ease-in-out hover:bg-dark"
+          onClick={goToTop}
+        >
+          <FaChevronUp />
+        </button>
       </div>
     </>
   );

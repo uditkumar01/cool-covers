@@ -11,10 +11,8 @@ export const throttle = (callback: Function, delay: number) => {
   let updatedArgs: any[] | null = null;
 
   return (...args: any[]) => {
-    if (timeout !== null) {
-      updatedArgs = args;
-      return;
-    }
+    updatedArgs = args;
+    if (timeout !== null) return;
 
     timeout = setTimeout(timeoutCallback, delay);
   };
