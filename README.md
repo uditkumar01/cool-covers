@@ -29,7 +29,7 @@ Copy-paste this into your markdown content, and that's it. Simple!
 
 Change the `username=` value to your GitHub's username.
 
-Change the `text=` value to your update cover's title.
+Change the `text=` value to update cover's title.
 
 ```md
 [![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit)](https://github.com/uditkumar01/cool-covers)
@@ -144,34 +144,34 @@ Its value should be a number.
 <table>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&fontSize=6rem" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2" alt="GitHub Readme cover" />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&fontSize=6rem" alt="GitHub Readme cover" />
-        </td>
-        <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&fontFamily=Rubik+Maze" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&fontSize=6rem&fontFamily=Luckiest+Guy" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4&fontFamily=Bangers" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&fontSize=5rem" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6&fontFamily=Audiowide" alt="GitHub Readme cover" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7&fontFamily=Silkscreen" alt="GitHub Readme cover" />
+        </td>
+        <td>
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8&fontFamily=Rubik+Distressed " alt="GitHub Readme cover" />
         </td>
     </tr>
 </table>
