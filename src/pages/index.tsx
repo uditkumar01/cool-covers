@@ -83,7 +83,7 @@ const Home: NextPage = () => {
       if (pageYOffset > 300) btn.classList.add("floating-btn-show");
       else btn.classList.remove("floating-btn-show");
     };
-    const onScroll = throttle(onThrottleCallback, 1000);
+    const onScroll = throttle(onThrottleCallback, 100);
 
     const onScrollHandler = (e: Event) => {
       if (!window || !navRef?.current || !backToTopRef?.current) return;
