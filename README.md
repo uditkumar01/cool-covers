@@ -49,24 +49,24 @@ To change the font, you can pass a query parameter `?fontFamily=` with the font 
 
 ### 🐤 Change Font Size
 
-You can change the font size by passing a query parameter `?fontSize=` with the font size.
+You can change the font size by passing a query parameter `?textFontSize=` with the font size.
 
-> Example: `&fontSize=4rem`
+> Example: `&textFontSize=4rem`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&fontSize=4rem)
+![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textFontSize=4rem)
 ```
 
 <em>Note: The font size can be any number or string.</em>
 
 ### ⚒️ Change Font Weight
 
-To change the font weight, you can pass a query parameter `?fontWeight=` with the font weight.
+To change the font weight, you can pass a query parameter `?textFontWeight=` with the font weight.
 
-> Example: `&fontWeight=400`
+> Example: `&textFontWeight=400`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&fontWeight=400)
+![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textFontWeight=400)
 ```
 
 <em>Note: The font weight can be `light/regular/bold/bolder/lighter` or any number.</em>
@@ -138,14 +138,25 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 ```
 
 ### 📌 Change Cover's Title Word Spacing
-You can customize the word spacing of the cover's title by passing a query parameter `?wordSpacing=` with the spacing value.
+You can customize the word spacing of the cover's title by passing a query parameter `?textWordSpacing=` with the spacing value.
 
 Its value should be a number (can have any unit like px, rem, em, etc).
 
-> Example: `&wordSpacing=25px`
+> Example: `&textWordSpacing=25px`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&fontSize=6rem&wordSpacing=25px)
+![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&textFontSize=6rem&textWordSpacing=25px)
+```
+
+### 📌 Change Cover's Title Letter Spacing
+You can customize the letter spacing of the cover's title by passing a query parameter `?textLetterSpacing=` with the spacing value.
+
+Its value should be a number (can have any unit like px, rem, em, etc).
+
+> Example: `&textLetterSpacing=25px`
+
+```md
+![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&textFontSize=6rem&textLetterSpacing=8px)
 ```
 
 ### 🖼️ All Different Patterns
@@ -155,7 +166,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 <table>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&fontSize=6rem&wordSpacing=25px&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&textFontSize=6rem&textWordSpacing=25px&textLetterSpacing=25px&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
             <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&fontFamily=Rubik+Maze&maxage=31536000" alt="GitHub Readme cover" />
@@ -163,7 +174,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
     </tr>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&fontSize=6rem&fontFamily=Luckiest+Guy&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&textFontSize=6rem&fontFamily=Luckiest+Guy&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
             <img src="https://github-cool-covers.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4&fontFamily=Bangers&maxage=31536000" alt="GitHub Readme cover" />
@@ -171,7 +182,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
     </tr>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&fontSize=5rem&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&textFontSize=5rem&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
             <img src="https://github-cool-covers.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6&fontFamily=Audiowide&maxage=31536000" alt="GitHub Readme cover" />

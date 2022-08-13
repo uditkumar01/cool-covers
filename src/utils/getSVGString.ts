@@ -3,19 +3,21 @@ import constant from "../constants/constant";
 import getImagesFromLink from "./getImagesFromLink";
 import getGoogleFontUrl from "./getGoogleFontUrl";
 import getFontCss from "./getFontCss";
+import getTextStyleString from "./getTextStyleString";
 
 export default async (
   {
     bgColor,
-    textColor,
     text,
-    fontSize,
     fontFamily = "Monoton",
     fontWeight,
     avatarRadius,
     pattern,
     grayscale,
-    wordSpacing,
+    textColor,
+    textFontSize,
+    textWordSpacing,
+    textLetterSpacing,
   }: Record<string, string>,
   users: IFollower[]
 ) => `<svg width="1141" height="398" viewBox="0 0 1141 398" fill="#${
@@ -26,12 +28,14 @@ export default async (
   <g style="mix-blend-mode:${grayscale ? "luminosity" : "normal"}">
     <rect width="1141" height="398" fill="url(#pattern0)" />
   </g>
-  <text x="50%" y="36%" direction="rtl" style="word-spacing:${wordSpacing}" font-weight="${
-  fontWeight || "400"
-}" font-family="'${
+  <text x="50%" y="36%" direction="rtl" style="${getTextStyleString({
+    wordSpacing: textWordSpacing,
+    letterSpacing: textLetterSpacing,
+    fill: textColor || ``,
+  })}" fill="currentColor" font-weight="${fontWeight || "400"}" font-family="'${
   fontFamily ? `${fontFamily}` : "Monoton"
 }','Brush Script MT',Verdana ,sans-serif,Arial" font-size="${
-  fontSize || "7rem"
+  textFontSize || "7rem"
 }" dominant-baseline="middle" text-anchor="middle">${
   text || "Hi, I'm Udit"
 }</text>
