@@ -101,35 +101,25 @@ const Home: NextPage = () => {
           className="ud-header absolute top-0 left-0 z-40 flex w-full items-center bg-transparent"
         >
           <div className="container">
-            <div className="relative -mx-4 flex items-center justify-between">
-              <div className="w-60 max-w-full px-4 pt-1">
-                <Link
-                  href="/"
-                  className="navbar-logo block w-full py-5"
-                  passHref
-                >
-                  <a>
-                    <Image
-                      src="/images/logo.png"
-                      alt="logo"
-                      height={50}
-                      width={50}
-                      className="header-logo w-full"
-                    />
-                  </a>
-                </Link>
-              </div>
-              <div className="flex w-full items-center justify-between px-4">
-                <div></div>
-                <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-                  <a
-                    href="https://github.com/uditkumar01/cool-covers"
-                    className="signUpBtn items-center flex gap-2 rounded-lg bg-white bg-opacity-20 py-2 px-6 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
-                  >
-                    <AiFillGithub size={22} /> Source Code
-                  </a>
-                </div>
-              </div>
+            <div className="relative -mx-4 px-2 flex items-center justify-between">
+              <Link href="/" passHref>
+                <a className="mt-1">
+                  <Image
+                    src="/images/logo.png"
+                    alt="logo"
+                    height={50}
+                    width={50}
+                    className="header-logo w-full"
+                  />
+                </a>
+              </Link>
+              <a
+                href="https://github.com/uditkumar01/cool-covers"
+                className="signUpBtn items-center flex gap-2 rounded-lg bg-white bg-opacity-20 py-2.5 sm:py-2 px-3 shadow-sm sm:px-6 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
+              >
+                <AiFillGithub size={22} />{" "}
+                <span className="hidden sm:flex">Source Code</span>
+              </a>
             </div>
           </div>
         </div>
@@ -260,7 +250,7 @@ const Home: NextPage = () => {
                 <div className="w-full px-4">
                   <div className="flex flex-col items-center justify-between overflow-hidden border">
                     <form
-                      className="flex justify-center gap-2 w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]"
+                      className="flex flex-col md:flex-row justify-center gap-2 w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]"
                       onSubmit={onSubmitHandler}
                     >
                       <input
@@ -272,7 +262,7 @@ const Home: NextPage = () => {
                       />
                       <button
                         type="submit"
-                        className={`inline-flex items-center justify-center rounded bg-primary py-4 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90 hover:shadow-lg scale-100 active:scale-95 ${
+                        className={`inline-flex items-center justify-center rounded bg-primary py-3 px-6 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90 hover:shadow-lg scale-100 active:scale-95 ${
                           isLoading ? "animate-pulse" : ""
                         }`}
                       >
@@ -286,7 +276,7 @@ const Home: NextPage = () => {
                         )}
                       </button>
                     </form>
-                    <div className="mb-12 flex flex-col gap-20 items-center">
+                    <div className="mb-1 sflex flex-col gap-20 items-center">
                       <div className="relative z-10 inline-block rounded-md lg:rounded-xl overflow-hidden mx-2">
                         <picture>
                           <source srcSet={src} type="image/svg+xml" />
@@ -301,25 +291,25 @@ const Home: NextPage = () => {
                           />
                         </picture>
                       </div>
-                      <div
-                        className={`${
-                          queryURL
-                            ? "opacity-100 h-auto"
-                            : "opacity-0 h-0 overflow-hidden"
-                        } relative bg-gray-200 flex items-center py-2 px-4 pr-3 rounded-md transition-all duration-200 ease-in-out`}
-                      >
-                        <p className="text-ellipsis overflow-hidden whitespace-nowrap w-full max-w-[200px] sm:max-w-xs md:max-w-sm text-gray-400">
-                          {queryURL}
-                        </p>
-                        <IconButton
-                          className={
-                            "!bg-primary hover:opacity-90 opacity-100 cursor-pointer !w-16 text-sm"
-                          }
-                          onClick={onCopy}
-                        >
-                          Copy
-                        </IconButton>
-                      </div>
+                      {queryURL && (
+                        <div className="flex justify-center">
+                          <div
+                            className={`mt-10 mb-4 md:mb-12 relative bg-gray-200 flex items-center justify-between mx-2 py-2 px-4 pr-3 rounded-md transition-all duration-200 ease-in-out w-full max-w-[300px] sm:max-w-xs md:max-w-sm`}
+                          >
+                            <p className="text-ellipsis overflow-hidden whitespace-nowrap w-full max-w-[300px] sm:max-w-xs md:max-w-sm text-gray-400">
+                              {queryURL}
+                            </p>
+                            <IconButton
+                              className={
+                                "!bg-primary hover:opacity-90 opacity-100 cursor-pointer !w-16 text-sm"
+                              }
+                              onClick={onCopy}
+                            >
+                              Copy
+                            </IconButton>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
