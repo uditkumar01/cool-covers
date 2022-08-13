@@ -15,6 +15,7 @@ export default async (
     avatarRadius,
     pattern,
     grayscale,
+    wordSpacing,
   }: Record<string, string>,
   users: IFollower[]
 ) => `<svg width="1141" height="398" viewBox="0 0 1141 398" fill="#${
@@ -25,9 +26,9 @@ export default async (
   <g style="mix-blend-mode:${grayscale ? "luminosity" : "normal"}">
     <rect width="1141" height="398" fill="url(#pattern0)" />
   </g>
-  <text x="50%" y="36%" direction="rtl" font-weight="${
-    fontWeight || "400"
-  }" font-family="'${
+  <text x="50%" y="36%" direction="rtl" style="word-spacing:${wordSpacing}" font-weight="${
+  fontWeight || "400"
+}" font-family="'${
   fontFamily ? `${fontFamily}` : "Monoton"
 }','Brush Script MT',Verdana ,sans-serif,Arial" font-size="${
   fontSize || "7rem"
