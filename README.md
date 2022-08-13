@@ -2,7 +2,11 @@
  <img width="100px" src="https://user-images.githubusercontent.com/55291327/143779291-adc7c78a-e643-4bf5-962d-35ce2a7b7a91.png" align="center" alt="GitHub Readme Covers" />
  <h2 align="center">❄️ GITHUB COOL COVERS ❄️</h2>
  <p align="center">Get dynamically generated 🌐 GitHub covers for your readmes!</p>
+ <a href="https://github-cool-covers.vercel.app" target="_blank">
+ <img width="200px" src="public/images/visitpage.png" align="center" alt="visit cool covers page" />
+ </a>
 </div>
+ <br />
 
 <div align="center">
  <img src="https://img.shields.io/badge/react%20-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react basge" />
