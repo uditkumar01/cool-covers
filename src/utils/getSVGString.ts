@@ -31,7 +31,7 @@ const getSVGString = async (
   <text x="50%" y="36%" direction="rtl" style="${getTextStyleString({
     wordSpacing: textWordSpacing,
     letterSpacing: textLetterSpacing,
-    fill: textColor || ``,
+    fill: textColor || "white",
   })}" fill="currentColor" font-weight="${fontWeight || "400"}" font-family="'${
   fontFamily ? `${fontFamily}` : "Monoton"
 }','Brush Script MT',Verdana ,sans-serif,Arial" font-size="${
