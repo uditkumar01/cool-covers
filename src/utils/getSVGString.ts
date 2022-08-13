@@ -5,7 +5,7 @@ import getGoogleFontUrl from "./getGoogleFontUrl";
 import getFontCss from "./getFontCss";
 import getTextStyleString from "./getTextStyleString";
 
-export default async (
+const getSVGString = async (
   {
     bgColor,
     text,
@@ -112,3 +112,5 @@ export default async (
     )}" />
   </defs>
 </svg>`;
+
+export default getSVGString;

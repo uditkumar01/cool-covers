@@ -83,7 +83,7 @@ const Home: NextPage = () => {
     return () => {
       window.removeEventListener("scroll", onScrollHandler);
     };
-  }, [navRef.current]);
+  }, []);
 
   return (
     <>
@@ -150,7 +150,7 @@ const Home: NextPage = () => {
                   </h1>
                   <p className="mx-auto mb-10 max-w-[600px] text-base text-[#e4e4e4] sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed">
                     Generate cool covers for your GitHub profile. Just enter
-                    your GitHub username and we'll generate a cool cover for
+                    your GitHub username and we{"'"}ll generate a cool cover for
                     you.
                   </p>
                   <div className="mb-10 flex gap-2 flex-wrap items-center justify-center">
@@ -161,6 +161,7 @@ const Home: NextPage = () => {
                     <a
                       href="https://www.buymeacoffee.com/uditkumar01"
                       target="_blank"
+                      rel="noreferrer"
                       className="relative h-[57px] w-[217px] rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
                     >
                       <Image
@@ -197,18 +198,44 @@ const Home: NextPage = () => {
                   data-wow-delay=".25s"
                 >
                   <div className="mt-16">
-                    <img
-                      src="/hero/hero-image.png"
-                      alt="hero"
-                      className="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
-                      loading="lazy"
-                    />
+                    <picture>
+                      <source srcSet="/hero/hero-image.png" type="image/png" />
+                      <img
+                        src="/hero/hero-image.png"
+                        alt="hero"
+                        className="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
+                        loading="lazy"
+                        draggable="false"
+                      />
+                    </picture>
                   </div>
                   <div className="absolute bottom-0 -left-9 z-[-1]">
-                    <img src="/images/pattern.svg" alt="css pattern" />
+                    <picture>
+                      <source
+                        srcSet="/images/pattern.svg"
+                        type="image/svg+xml"
+                      />
+                      <img
+                        src="/images/pattern.svg"
+                        alt="css pattern"
+                        draggable="false"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
                   <div className="absolute -top-6 -right-6 z-[-1]">
-                    <img src="/images/pattern.svg" alt="css pattern" />
+                    <picture>
+                      <source
+                        srcSet="/images/pattern.svg"
+                        type="image/svg+xml"
+                      />
+                      <img
+                        src="/images/pattern.svg"
+                        alt="css pattern"
+                        draggable="false"
+                        loading="lazy"
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -226,7 +253,7 @@ const Home: NextPage = () => {
             </h1>
             <p className="mx-auto mb-10 max-w-[600px] text-base text-gray-400 sm:text-md sm:leading-relaxed md:text-lg md:leading-relaxed">
               Generate cool covers for your GitHub profile. Just enter your
-              GitHub username and we'll generate a cool cover for you.
+              GitHub username and we{"'"}ll generate a cool cover for you.
             </p>
             <div className="wow fadeInUp bg-white" data-wow-delay=".2s">
               <div className="-mx-4 flex flex-wrap">
@@ -261,14 +288,18 @@ const Home: NextPage = () => {
                     </form>
                     <div className="mb-12 flex flex-col gap-20 items-center">
                       <div className="relative z-10 inline-block rounded-md lg:rounded-xl overflow-hidden mx-2">
-                        <img
-                          src={src}
-                          alt="image"
-                          className={`mx-auto lg:ml-auto ${
-                            isLoading ? "animate-pulse" : ""
-                          }`}
-                          draggable="false"
-                        />
+                        <picture>
+                          <source srcSet={src} type="image/svg+xml" />
+                          <img
+                            src={src}
+                            alt="image"
+                            className={`mx-auto lg:ml-auto ${
+                              isLoading ? "animate-pulse" : ""
+                            }`}
+                            draggable="false"
+                            loading="lazy"
+                          />
+                        </picture>
                       </div>
                       <div
                         className={`${
