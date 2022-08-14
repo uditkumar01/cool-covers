@@ -10,7 +10,7 @@ import {
 } from "react-icons/ai";
 import { ImSpinner5 } from "react-icons/im";
 import { useEffect, useRef, useState } from "react";
-import { IconButton } from "../components";
+import { IconButton, ScrollTo } from "../components";
 import { throttle } from "../utils/throttle";
 import { FaChevronUp } from "react-icons/fa";
 
@@ -155,10 +155,15 @@ const Home: NextPage = () => {
                     your GitHub username and we{"'"}ll generate a cool cover for
                     you.
                   </p>
-                  <div className="mb-10 flex gap-2 flex-wrap items-center justify-center">
-                    <button className="inline-flex items-center justify-center rounded-lg bg-white py-4 px-6 text-center text-base font-medium text-dark hover:text-primary hover:shadow-lg sm:px-10 hover:-translate-y-[2px] transition-all duration-300 ease-in-out">
-                      Get Started
-                    </button>
+                  <div className="mb-10 flex gap-3 flex-wrap items-center justify-center">
+                    <ScrollTo
+                      scrollToId="generate-covers"
+                      key={"scrollTo-get-started-btn"}
+                    >
+                      <button className="inline-flex items-center justify-center w-[217px] rounded-lg bg-white py-4 px-6 text-center text-base font-medium text-dark hover:text-primary hover:shadow-lg sm:px-10 hover:-translate-y-[2px] transition-all duration-300 ease-in-out">
+                        Get Started
+                      </button>
+                    </ScrollTo>
 
                     <a
                       href="https://www.buymeacoffee.com/uditkumar01"
@@ -177,7 +182,15 @@ const Home: NextPage = () => {
                     className="wow fadeInUp flex justify-center"
                     data-wow-delay=".3s"
                   >
-                    <button className="inline-flex items-center justify-center rounded-lg border-gray-400 border-dotted border-2 py-2 px-4 text-center text-base font-medium text-white hover:text-yellow-100 hover:shadow-lg sm:px-7 hover:-translate-y-[2px] transition-all duration-300 ease-in-out">
+                    <button
+                      className="inline-flex items-center justify-center rounded-lg border-gray-400 border-dotted border-2 py-2 px-4 text-center text-base font-medium text-white hover:text-yellow-100 hover:shadow-lg sm:px-7 hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
+                      onClick={() => {
+                        window?.open(
+                          "https://github.com/uditkumar01/cool-covers",
+                          "_blank"
+                        );
+                      }}
+                    >
                       ⭐ Star on GitHub{" "}
                       <span className="pl-2">
                         <svg
@@ -249,7 +262,7 @@ const Home: NextPage = () => {
           id="about"
           className="bg-white pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]"
         >
-          <div className="container text-center">
+          <div className="container text-center" id="generate-covers">
             <h1 className="mb-4 text-3xl font-bold leading-snug text-black sm:text-4xl sm:leading-snug md:text-[45px] md:leading-snug">
               GitHub Cool Covers
             </h1>
@@ -353,7 +366,7 @@ const Home: NextPage = () => {
         </section>
 
         <footer
-          className="wow fadeInUp flex gap-4 justify-center px-4 py-10 relative z-10 bg-black"
+          className="wow fadeIn flex gap-4 justify-center px-4 py-10 relative z-10 bg-black"
           data-wow-delay=".15s"
         >
           <IconButton
@@ -364,6 +377,7 @@ const Home: NextPage = () => {
             <AiFillGithub size={22} />
           </IconButton>
           <IconButton
+            className="hover:bg-[#1d9bf0]"
             onClick={() => {
               window.open("https://twitter.com/uditkumar_01", "_blank");
             }}
@@ -371,6 +385,7 @@ const Home: NextPage = () => {
             <AiFillTwitterCircle size={22} />
           </IconButton>
           <IconButton
+            className="hover:bg-[#0a66c2]"
             onClick={() => {
               window.open("https://www.linkedin.com/in/uditkumar01", "_blank");
             }}
