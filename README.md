@@ -170,10 +170,10 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 <table>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&textFontSize=6rem&textWordSpacing=25px&textLetterSpacing=25px&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&textFontSize=5rem&textWordSpacing=20px&textLetterSpacing=10px&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&fontFamily=Rubik+Maze&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&bgColor=ff00aaaa&fontFamily=Rubik+Maze&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
