@@ -11,7 +11,7 @@ const getSVGString = async (
     bgColor,
     text,
     fontFamily = "Monoton",
-    fontWeight,
+    textFontWeight,
     avatarRadius,
     pattern,
     grayscale,
@@ -35,7 +35,9 @@ const getSVGString = async (
       fill: textColor || "white",
       filter: glitch === "true" ? "url(#glitchFilter)" : "",
     }
-  )}" fill="currentColor" font-weight="${fontWeight || "400"}" font-family="'${
+  )}" fill="currentColor" font-weight="${
+  textFontWeight || "400"
+}" font-family="'${
   fontFamily ? `${fontFamily}` : "Monoton"
 }','Brush Script MT',Verdana ,sans-serif,Arial" font-size="${
   textFontSize || "7rem"
@@ -71,7 +73,7 @@ const getSVGString = async (
 }" opacity="0.5" />
   <defs>
     <style type="text/css">${await getFontCss(
-      getGoogleFontUrl(fontFamily, fontWeight)
+      getGoogleFontUrl(fontFamily, textFontWeight)
     )}${DEFAULT_SVG_CSS}
     </style>
     ${glitch === "true" ? glitchEffectCSS : ""}
