@@ -17,7 +17,7 @@
  <img src="https://img.shields.io/github/stars/uditkumar01/cool-covers?style=for-the-badge&color=silver" alt="build status badge" />
  <img src="https://img.shields.io/github/forks/uditkumar01/cool-covers?style=for-the-badge" alt="no of forks badge" />
  <img src="https://vercelbadge.vercel.app/api/uditkumar01/cool-covers?style=for-the-badge" alt="deployment status" />
- <img alt="View Count" src="https://hits.sh/github.com/uditkumar01/cool-covers.svg?style=for-the-badge&label=Repo+Visits"/>
+ <img alt="View Count" src="https://hits.sh/github.com/uditkumar01/cool-covers.svg?style=for-the-badge"/>
  <!-- <img alt="Hits" src="https://hits.sh/github-cool-covers.vercel.app.svg?style=for-the-badge&color=0fa5c3&labelColor=48484e&label=Website+Hits"/> -->
  </div>
 
