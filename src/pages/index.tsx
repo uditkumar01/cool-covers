@@ -13,8 +13,24 @@ import { useEffect, useRef, useState } from "react";
 import { IconButton, ScrollTo } from "../components";
 import { throttle } from "../utils/throttle";
 import { FaChevronUp } from "react-icons/fa";
+import constant from "../constants/constant";
 
 const defaultSrc = "/images/example.svg";
+
+const pickRandomPattern = () => {
+  const patterns = constant.PATTERNS_AVALIABLE;
+  const randomIndex = Math.floor(Math.random() * patterns.length);
+  return patterns[randomIndex];
+};
+
+const pickRandomGoogleFontName = () => {
+  // get all google fonts names
+  const fonts = constant.GOOGLE_FONT_NAMES;
+
+  const randomIndex = Math.floor(Math.random() * fonts.length);
+
+  return fonts[randomIndex];
+};
 
 const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -44,7 +60,7 @@ const Home: NextPage = () => {
   const getImage = async (username: string) => {
     setIsLoading(true);
     try {
-      const queryStr = `?username=${username}&text=Hi+I'm+@${username}&fontFamily=Monoton&pattern=p2&textFontSize=4rem&textWordSpacing=25px&textLetterSpacing=8px`;
+      const queryStr = `?username=${username}&text=Hi+I'm+@${username}&fontFamily=${pickRandomGoogleFontName()}&pattern=${pickRandomPattern()}&textFontSize=4.5rem&textWordSpacing=25px`;
       const image = await axios.get(`/api/get-cover${queryStr}`);
       const svgData = image.data;
       // to data url

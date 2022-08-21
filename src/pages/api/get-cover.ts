@@ -25,8 +25,11 @@ export default async function handler(
 
     const svgString = await createImage(parseQuery(req.query as any));
     const maxageForCache = Math.max(
-      43200,
-      parseInt((req.query?.maxage || "0") as string)
+      parseInt(process.env.MIN_CACHE_AGE_IN_SECS ?? "86400"),
+      Math.min(
+        parseInt((req.query?.maxage ?? "86400") as string),
+        parseInt(process.env.MAX_CACHE_AGE_IN_SECS ?? "86400")
+      )
     );
     if (!svgString) throw new Error("Error creating image");
 
@@ -34,7 +37,7 @@ export default async function handler(
     // cache for 1/2 day
     res.setHeader(
       "Cache-Control",
-      `s-maxage=${maxageForCache}, max-age=${maxageForCache}, must-revalidate`
+      `s-maxage=${maxageForCache}, max-age=${maxageForCache}, must-revalidate, stale-if-error=604800`
     );
     res.status(200).send(Buffer.from(svgString, "utf8"));
   } catch (err: any) {
