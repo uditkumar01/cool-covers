@@ -25,7 +25,7 @@
 # ⭐ Features
 
 - Dynamically 🤖 generated covers with cool patterns.
-- Updates the recent followers ✏️ avatars on every follow event, instantly.
+- Updates the recent followers ✏️ avatars (in 1 or 2 days).
 - Eight unique 😊 background patterns.
 - Supports all 🕸️ [Web Safe Fonts](https://www.w3schools.com/cssref/css_websafe_fonts.asp) + 🤩 [Google Fonts](https://fonts.google.com/).
 - Highly Customizable 📝.
