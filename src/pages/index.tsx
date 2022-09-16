@@ -121,6 +121,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         <script src="/scripts/wow.min.js/" defer />
         <script src="/scripts/main.min.js/" defer />
+        <link rel="preload" as="image" href="/images/buymeacoffee.png" />
       </Head>
 
       <div className="">
@@ -185,12 +186,13 @@ const Home: NextPage = () => {
                       href="https://www.buymeacoffee.com/uditkumar01"
                       target="_blank"
                       rel="noreferrer"
-                      className="relative h-[57px] w-[217px] rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
+                      className="relative h-[57px] w-[217px] bg-[#ffdd00] rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
                     >
                       <Image
                         src="/images/buymeacoffee.png"
                         alt="Buy Me A Coffee"
                         layout="fill"
+                        loading="eager"
                       />
                     </a>
                   </div>
