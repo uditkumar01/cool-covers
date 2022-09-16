@@ -124,9 +124,9 @@ const Home: NextPage = () => {
         <meta property="og:url" content={siteURL} />
         <meta property="og:title" content="Github Cool Covers" />
         <meta property="og:description" content="Generate cool covers for your GitHub profile." />
-        <meta property="og:image" content="/screenshots/landingPage.png" />
+        <meta property="og:image" content={`${siteURL}screenshots/landingPage.png`} />
         <meta property="twitter:card" content="Generate cool covers for your GitHub profile. Just enter your GitHub username and we'll generate a cool cover for you." />
-        <meta property="twitter:url" content={siteURL} />
+        <meta property="twitter:url" content={`${siteURL}screenshots/landingPage.png`} />
         <meta property="twitter:title" content="Github Cool Covers" />
         <meta property="twitter:description" content="Generate cool covers for your GitHub profile." />
         <meta property="twitter:image" content="/screenshots/landingPage.png" />
