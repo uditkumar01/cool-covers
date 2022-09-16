@@ -126,10 +126,10 @@ const Home: NextPage = () => {
         <meta property="og:description" content="Generate cool covers for your GitHub profile." />
         <meta property="og:image" content={`${siteURL}screenshots/landingPage.png`} />
         <meta property="twitter:card" content="Generate cool covers for your GitHub profile. Just enter your GitHub username and we'll generate a cool cover for you." />
-        <meta property="twitter:url" content={`${siteURL}screenshots/landingPage.png`} />
+        <meta property="twitter:url" content={siteURL} />
         <meta property="twitter:title" content="Github Cool Covers" />
         <meta property="twitter:description" content="Generate cool covers for your GitHub profile." />
-        <meta property="twitter:image" content="/screenshots/landingPage.png" />
+        <meta property="twitter:image" content={`${siteURL}screenshots/landingPage.png`} />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
