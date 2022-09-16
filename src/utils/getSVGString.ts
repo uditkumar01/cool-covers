@@ -6,6 +6,8 @@ import getFontCss from "./getFontCss";
 import getTextStyleString from "./getTextStyleString";
 import { DEFAULT_SVG_CSS, glitchEffectCSS } from "../constants/defaultSvgCss";
 
+const patternURL = process.env.PATTERN_DIR_URL
+
 const getSVGString = async (
   {
     bgColor,
@@ -111,7 +113,7 @@ const getSVGString = async (
       users?.[3]?.avatar_url || ""
     }" />
     <image id="image0_2_16" width="1141" height="398" xlink:href="${await getImagesFromLink(
-      `${"https://raw.githubusercontent.com/uditkumar01/cool-covers/cool-cover/beta-1.0.0/public"}/patterns/${
+      `${patternURL}${
         constant.PATTERNS_AVALIABLE.includes(pattern || "_none_")
           ? pattern
           : "p1"
