@@ -118,7 +118,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Cool Covers</title>
-        <meta name="description" content="Generate cool covers for your GitHub profile.">
+        <meta name="description" content="Generate cool covers for your GitHub profile." />
         
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteURL} />
