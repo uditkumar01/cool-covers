@@ -168,8 +168,11 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 
 ### 🖼️ All Different Patterns
 
-<!-- get table of able images 2 cols -->
+![examples](public/screenshots/examples.png)
 
+
+<!-- get table of able images 2 cols -->
+<!--
 <table>
     <tr>
         <td>
@@ -204,6 +207,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
         </td>
     </tr>
 </table>
+-->
 
 <h3 align="center">⭐ Star this project on GitHub</h3>
 
