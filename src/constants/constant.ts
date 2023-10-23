@@ -3,7 +3,7 @@ import path from "path";
 
 const PATTERN_BASE_PATH = path.join(__dirname, "..", "public", "pattern");
 // const SVGS_BASE_PATH = path.join(IMAGES_BASE_PATH, "..", "svgs");
-const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif']; 
+const imgExts = ['.jpg', '.jpeg', '.png', '.gif']; 
 const listImageNames = () => fs.readdirSync(PATTERN_BASE_PATH).filter(file => imgExts.includes(path.extname(file).toLowerCase()));
 const PATTERNS_AVALIABLE = listImageNames();
 console.log("PATTERNS_AVAILABLE", PATTERNS_AVALIABLE);
