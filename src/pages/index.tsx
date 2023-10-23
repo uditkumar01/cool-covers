@@ -19,7 +19,7 @@ const defaultSrc = "/images/example.svg";
 const siteURL = "https://github-cool-covers.vercel.app/";
 
 const pickRandomPattern = () => {
-  const patterns = constant.PATTERNS_AVALIABLE;
+  const patterns = constant.PATTERNS_AVAILABLE;
   const randomIndex = Math.floor(Math.random() * patterns.length);
   return patterns[randomIndex];
 };
