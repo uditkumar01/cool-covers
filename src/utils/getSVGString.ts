@@ -114,7 +114,7 @@ const getSVGString = async (
     }" />
     <image id="image0_2_16" width="1141" height="398" xlink:href="${await getImagesFromLink(
       `${patternURL}${
-        constant.listImageNames().includes(pattern || "_none_")
+        constant.PATTERNS_AVAILABLE.includes(pattern || "_none_")
           ? pattern
           : "p1"
       }.png`
