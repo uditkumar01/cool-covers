@@ -18,4 +18,5 @@ const GOOGLE_FONT_NAMES = [
 export default {
   PATTERNS_AVALIABLE,
   GOOGLE_FONT_NAMES,
+  listImageNames
 };
