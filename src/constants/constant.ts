@@ -1,6 +1,3 @@
-import fs from "fs";
-import path from "path";
-
 const PATTERN_BASE_PATH = path.join(__dirname, "..", "public", "pattern");
 // const SVGS_BASE_PATH = path.join(IMAGES_BASE_PATH, "..", "svgs");
 const imgExts = ['.jpg', '.jpeg', '.png', '.gif']; 
