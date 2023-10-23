@@ -1,7 +1,12 @@
-// const IMAGES_BASE_PATH = path.join(__dirname, "..", "public", "images");
+import fs from "fs";
+import path from "path";
+
+const PATTERN_BASE_PATH = path.join(__dirname, "..", "public", "pattern");
 // const SVGS_BASE_PATH = path.join(IMAGES_BASE_PATH, "..", "svgs");
-const listImageNames = (dirPath, imgExts) => fs.readdirSync(dirPath).filter(file => imgExts.includes(path.extname(file).toLowerCase()));
-const PATTERNS_AVALIABLE = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8"];
+const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif']; 
+const listImageNames = () => fs.readdirSync(PATTERN_BASE_PATH).filter(file => imgExts.includes(path.extname(file).toLowerCase()));
+const PATTERNS_AVALIABLE = listImageNames();
+console.log("PATTERNS_AVAILABLE", PATTERNS_AVALIABLE);
 const GOOGLE_FONT_NAMES = [
   "Poppins",
   "Quicksand",
