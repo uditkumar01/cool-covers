@@ -2,7 +2,7 @@
  <img width="100px" src="https://user-images.githubusercontent.com/55291327/143779291-adc7c78a-e643-4bf5-962d-35ce2a7b7a91.png" align="center" alt="GitHub Readme Covers" />
  <h2 align="center">❄️ GITHUB COOL COVERS ❄️</h2>
  <p align="center">Get dynamically generated 🌐 GitHub covers for your readmes!</p>
- <a href="https://github-cool-covers.vercel.app" target="_blank">
+ <a href="https://cool-covers-github.vercel.app" target="_blank">
  <img width="200px" src="public/images/visitpage.png" align="center" alt="visit cool covers page" />
  </a>
 </div>
@@ -39,7 +39,7 @@ Change the `username=` value to your GitHub's username.
 Change the `text=` value to update cover's title.
 
 ```md
-[![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit)](https://github.com/uditkumar01/cool-covers)
+[![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit)](https://github.com/uditkumar01/cool-covers)
 ```
 
 ### 🔤 Change Font
@@ -49,7 +49,7 @@ To change the font, you can pass a query parameter `?fontFamily=` with the font 
 > Example: `&fontFamily=Roboto`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&fontFamily=Roboto)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&fontFamily=Roboto)
 ```
 
 <em>Note: The font name must be a valid font name (**case sensitive**). For Google fonts u can directly copy the name of the font from here: <a href="https://fonts.google.com/">Google Fonts</a></em>
@@ -61,7 +61,7 @@ You can change the font size by passing a query parameter `?textFontSize=` with 
 > Example: `&textFontSize=4rem`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textFontSize=4rem)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textFontSize=4rem)
 ```
 
 <em>Note: The font size can be any number or string.</em>
@@ -73,7 +73,7 @@ To change the font weight, you can pass a query parameter `?textFontWeight=` wit
 > Example: `&textFontWeight=400`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textFontWeight=400)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textFontWeight=400)
 ```
 
 <em>Note: The font weight can be `light/regular/bold/bolder/lighter` or any number.</em>
@@ -87,7 +87,7 @@ Use `?bgColor=` with the **hex code without #** of the color you want to use.
 > Example: `&bgColor=000000`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&bgColor=000000)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&bgColor=000000)
 ```
 
 ### :four_leaf_clover: Change Text Color
@@ -99,7 +99,7 @@ Use `?textColor=` with the **hex code without #** of the color you want to use.
 > Example: `&textColor=ffffff`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textColor=ffffff)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&textColor=ffffff)
 ```
 
 ### 💎 Add Background Pattern
@@ -109,7 +109,7 @@ To add a background pattern, you can pass a query parameter `?pattern=` with the
 > Example: `&pattern=p2`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2)
 ```
 
 If you wish **you can 💻 contribute by creating a new pattern and designs.**
@@ -129,7 +129,7 @@ Using `?grayscale=` query parameter, you can add a grayscale effect to the cover
 > Example: `&grayscale=''` // Removes the grayscale effect.
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&grayscale=true)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&grayscale=true)
 ```
 
 ### :large_blue_circle: Change Avatar Radius
@@ -141,7 +141,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 > Example: `&avatarRadius=50`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&grayscale=true&avatarRadius=50)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&grayscale=true&avatarRadius=50)
 ```
 
 ### 📌 Change Cover's Title Word Spacing
@@ -152,7 +152,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 > Example: `&textWordSpacing=25px`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&textFontSize=6rem&textWordSpacing=25px)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&textFontSize=6rem&textWordSpacing=25px)
 ```
 
 ### 📌 Change Cover's Title Letter Spacing
@@ -163,7 +163,7 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 > Example: `&textLetterSpacing=25px`
 
 ```md
-![Udit's GitHub cover](https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&textFontSize=6rem&textLetterSpacing=8px)
+![Udit's GitHub cover](/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&textFontSize=6rem&textLetterSpacing=8px)
 ```
 
 ### 🖼️ All Different Patterns
@@ -176,34 +176,34 @@ Its value should be a number (can have any unit like px, rem, em, etc).
 <table>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&textFontSize=5rem&textWordSpacing=20px&textLetterSpacing=10px&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="/api/get-cover?username=sauravtom&text=Hi,+I'm+Saurav&pattern=p1&textFontSize=5rem&textWordSpacing=20px&textLetterSpacing=10px&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&bgColor=ff00aaaa&fontFamily=Rubik+Maze&maxage=31536000" alt="GitHub Readme cover" />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&textFontSize=6rem&fontFamily=Luckiest+Guy&maxage=31536000" alt="GitHub Readme cover" />
-        </td>
-        <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4&fontFamily=Bangers&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="/api/get-cover?username=uditkumar01&text=Hola,+I'm+Udit&pattern=p2&bgColor=ff00aaaa&fontFamily=Rubik+Maze&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&textFontSize=5rem&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&textFontSize=6rem&fontFamily=Luckiest+Guy&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6&fontFamily=Audiowide&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4&fontFamily=Bangers&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7&fontFamily=Silkscreen&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&textFontSize=5rem&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://github-cool-covers.vercel.app/api/get-cover?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8&fontFamily=Rubik+Distressed&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6&fontFamily=Audiowide&maxage=31536000" alt="GitHub Readme cover" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7&fontFamily=Silkscreen&maxage=31536000" alt="GitHub Readme cover" />
+        </td>
+        <td>
+            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8&fontFamily=Rubik+Distressed&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
 </table>
