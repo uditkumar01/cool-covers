@@ -8,8 +8,6 @@ import { DEFAULT_SVG_CSS, glitchEffectCSS } from "../constants/defaultSvgCss";
 
 const patternURL = process.env.PATTERN_DIR_URL
 
-console.log("PATTERN_DIR_URL", patternURL)
-
 const getSVGString = async (
   {
     bgColor,

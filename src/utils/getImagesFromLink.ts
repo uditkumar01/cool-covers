@@ -2,7 +2,6 @@ import axios from "axios";
 
 const getImagesFromLink = async (imageLink: string) => {
   try {
-    console.log("imageLink", imageLink)
     const { data } = await axios.get(imageLink, {
       responseType: "arraybuffer",
     });
