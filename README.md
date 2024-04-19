@@ -2,7 +2,7 @@
  <img width="100px" src="https://user-images.githubusercontent.com/55291327/143779291-adc7c78a-e643-4bf5-962d-35ce2a7b7a91.png" align="center" alt="GitHub Readme Covers" />
  <h2 align="center">❄️ GITHUB COOL COVERS ❄️</h2>
  <p align="center">Get dynamically generated 🌐 GitHub covers for your readmes!</p>
- <a href="https://cool-covers-github.vercel.app" target="_blank">
+ <a href="https://cool-covers.vercel.app" target="_blank">
  <img width="200px" src="public/images/visitpage.png" align="center" alt="visit cool covers page" />
  </a>
 </div>
@@ -187,23 +187,23 @@ Its value should be a number (can have any unit like px, rem, em, etc).
             <img src="/api/get-cover?username=sohamsshah&text=Hello,+I%27m+Soham&pattern=p3&textFontSize=6rem&fontFamily=Luckiest+Guy&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4&fontFamily=Bangers&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers.vercel.app/api/get-cover?username=SAYUK09&text=Hola,+I'm+Sayuri&pattern=p4&fontFamily=Bangers&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&textFontSize=5rem&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers.vercel.app/api/get-cover?username=MehulKChaudhari&text=Hola,+I'm+Mehul&pattern=p5&fontFamily=Rock+Salt&textFontSize=5rem&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6&fontFamily=Audiowide&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers.vercel.app/api/get-cover?username=vivekgugnani&text=Hola,+I'm+Vivek&pattern=p6&fontFamily=Audiowide&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
     <tr>
         <td>
-            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7&fontFamily=Silkscreen&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers.vercel.app/api/get-cover?username=NadaaFarook&text=Hola,+I'm+Nada&pattern=p7&fontFamily=Silkscreen&maxage=31536000" alt="GitHub Readme cover" />
         </td>
         <td>
-            <img src="https://cool-covers-github.vercel.app/api/get-cover?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8&fontFamily=Rubik+Distressed&maxage=31536000" alt="GitHub Readme cover" />
+            <img src="https://cool-covers.vercel.app/api/get-cover?username=prerana1821&text=Hello,+I'm+Prerana&pattern=p8&fontFamily=Rubik+Distressed&maxage=31536000" alt="GitHub Readme cover" />
         </td>
     </tr>
 </table>
