@@ -141,7 +141,6 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#ffffff" />
         <script src="/scripts/wow.min.js/" defer />
         <script src="/scripts/main.min.js/" defer />
-        <link rel="preload" as="image" href="/images/buymeacoffee.png" />
       </Head>
 
       <div className="">
@@ -202,25 +201,7 @@ const Home: NextPage = () => {
                       </button>
                     </ScrollTo>
 
-                    <a
-                      href="https://www.buymeacoffee.com/uditkumar01"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="relative h-[57px] w-[217px] bg-[#ffdd00] rounded-md overflow-hidden hover:shadow-lg hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
-                    >
-                      <Image
-                        src="/images/buymeacoffee.png"
-                        alt="Buy Me A Coffee"
-                        layout="fill"
-                        loading="eager"
-                      />
-                    </a>
-                  </div>
-                  <div
-                    className="wow fadeInUp flex justify-center"
-                    data-wow-delay=".3s"
-                  >
-                    <button
+                     <button
                       className="inline-flex items-center justify-center rounded-lg border-gray-400 border-dotted border-2 py-2 px-4 text-center text-base font-medium text-white hover:text-yellow-100 hover:shadow-lg sm:px-7 hover:-translate-y-[2px] transition-all duration-300 ease-in-out"
                       onClick={() => {
                         window?.open(
