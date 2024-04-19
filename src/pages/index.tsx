@@ -16,7 +16,7 @@ import { FaChevronUp } from "react-icons/fa";
 import constant from "../constants/constant";
 
 const defaultSrc = "/images/example.svg";
-const siteURL = "https://github-cool-covers.vercel.app/";
+const siteURL = "https://cool-covers.vercel.app/";
 
 const pickRandomPattern = () => {
   const patterns = constant.PATTERNS_AVAILABLE;
